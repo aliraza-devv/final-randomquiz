@@ -58,6 +58,19 @@ body {
   
 }
 
+.form-footer button:disabled {
+  background-color: gray !important;
+  cursor: not-allowed !important;
+}
+
+.error-message{
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #ff3300;
+  text-align: center;
+  margin-bottom: .3rem;
+}
+
 .heading-light {
   color: var(--color-light-grey);
 }

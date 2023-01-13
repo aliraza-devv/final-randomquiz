@@ -1,6 +1,6 @@
 import React from "react";
-import BtnSecondary from "./BtnSecondary";
 import { Link } from "react-router-dom";
+import BtnSecondary from "./BtnSecondary";
 
 const MainPage = (props) => {
   return (
@@ -12,7 +12,6 @@ const MainPage = (props) => {
         <Link to="signup">
           <BtnSecondary title="Sign up" />
         </Link>
-        {/* <div className="main-page__start">{props.name ? "Hi" : "Login Please"}</div> */}
       </div>
     </>
   );

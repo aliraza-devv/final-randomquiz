@@ -1,16 +1,41 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import InputControl from "./InputControl";
+import { authe } from "../firbase";
+import { async } from "@firebase/util";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     name: "",
     email: "",
     pass: "",
   });
+  const [errorMsg, setErrorMsg] = useState("");
+  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
   const handleSubmission = () => {
-    console.log(values);
+    if (!values.name || !values.email || !values.pass) {
+      setErrorMsg("Please Fill all the fields");
+      return;
+    }
+    setErrorMsg("");
+
+    setSubmitButtonDisabled(true);
+    createUserWithEmailAndPassword(authe, values.email, values.pass)
+      .then(async (res) => {
+        setSubmitButtonDisabled(false);
+        const user = res.user;
+        await updateProfile(user, {
+          displayName: values.name,
+        });
+        navigate('/startgame')
+      })
+      .catch((err) => {
+        setSubmitButtonDisabled(false);
+        setErrorMsg(err.message);
+      });
   };
 
   return (
@@ -40,7 +65,12 @@ const Signup = () => {
         />
 
         <div className="form-footer">
-          <button className="btn-primary" onClick={handleSubmission}>
+          <b className="error-message">{errorMsg}</b>
+          <button
+            className="btn-primary"
+            disabled={submitButtonDisabled}
+            onClick={handleSubmission}
+          >
             Sign Up
             <span className="arrow-wrapper">
               <span className="arrow"></span>
