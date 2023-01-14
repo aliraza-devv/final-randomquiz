@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import InputControl from "./InputControl";
 import { authe } from "../firbase";
-import { async } from "@firebase/util";
 
 const Signup = () => {
   const navigate = useNavigate();
