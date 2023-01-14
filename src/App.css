@@ -47,6 +47,17 @@ body {
   border-radius: 10px;
 }
 
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.marg {
+  margin-top: 1rem;
+}
+
 .score{
   width: 100%;
   padding: 1rem;
@@ -119,6 +130,16 @@ body {
   border-radius: 5px;
   color: var(--color-light-grey);
   cursor: pointer;
+}
+
+.list-result{
+  list-style: none;
+  word-spacing: 8rem;
+}
+
+.bold {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 /* Btn Primary */
