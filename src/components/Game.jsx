@@ -1,17 +1,35 @@
 import React, { useState } from "react";
-import BtnSecondary from "./BtnSecondary";
+// import { db } from "../firbase";
+import { useNavigate } from "react-router-dom";
+import { getDatabase, ref, set } from "firebase/database";
 
 const Game = () => {
+  const navigate = useNavigate()
   const [num, setNum] = useState(0);
   const [score, setScore] = useState(0);
-  const [result, setResult] = useState({
+  const [isShown, setIsShown] = useState(false);
+  const [result, setResult] = useState([{
     check: "",
     answer: "",
-  });
-  const [isShown, setIsShown] = useState(false);
+  }]);
+
+  // const handleUpload = () => {
+  //   db.ref('result/' + result.id).set({
+  //     result: result
+  //   })
+  // }
+
+  const writeResultData = () => {
+    const db = getDatabase();
+    set(ref(db, 'result/' + result.id), {
+      result: result
+    });
+    navigate('/')
+  }
 
   const handleShow = () => {
     setIsShown((current) => !current);
+    console.log(result)
   };
 
   function randomNumberInRange(min, max) {
@@ -24,17 +42,17 @@ const Game = () => {
 
   const handleScore = () => {
     setScore(score + 1);
-    setResult({
+    setResult([...result, {
       check: "Right",
       answer: num,
-    });
+    }]);
   };
 
   const handleWrongScore = () => {
-    setResult({
+    setResult([...result, {
       check: "Wrong",
       answer: num,
-    });
+    }]);
   };
 
   return (
@@ -76,8 +94,13 @@ const Game = () => {
             {isShown && (
               <div>
                 <h2>{score} answers are correct</h2>
+                {/* <ul>
+                  {result.map((res) => (
+                    <li key={res.id}>{res.check}:  {res.answer}</li>
+                  ))}
+                </ul> */}
                 <div>
-                  <button className="btn-primary">
+                  <button onClick={writeResultData} className="btn-primary">
                     Upload to Firebase
                     <span className="arrow-wrapper">
                       <span className="arrow"></span>
