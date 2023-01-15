@@ -42,8 +42,8 @@ const Game = () => {
 
   const handleRetry = () => {
     setNum(0);
-    setIsShow(false)
-    setIsShown(false)
+    setIsShow(false);
+    setIsShown(false);
   };
 
   const handleShow = () => {
@@ -56,8 +56,7 @@ const Game = () => {
 
   const handleClick = () => {
     setNum(randomNumberInRange(100, 200));
-    setShow(true)
-    
+    setShow(true);
   };
 
   const handleScore = () => {
@@ -104,14 +103,14 @@ const Game = () => {
               </li>
             </ul>
             {show && (
-            <div className="next-container">
-              <button className="btn-primary" onClick={handleClick}>
-                Next
-                <span className="arrow-wrapper">
-                  <span className="arrow"></span>
-                </span>
-              </button>
-            </div>
+              <div className="next-container">
+                <button className="btn-primary" onClick={handleClick}>
+                  Next
+                  <span className="arrow-wrapper">
+                    <span className="arrow"></span>
+                  </span>
+                </button>
+              </div>
             )}
           </div>
           <div className="inner-container">
@@ -154,6 +153,9 @@ const Game = () => {
                         {res.check} {res.answer}
                       </li>
                     ))}
+                    <button onClick={handleRetry} className="btn-secondary marg">
+                      <span className="btn-secondary__span">Improve</span>
+                    </button>
                   </ul>
                 )}
               </div>

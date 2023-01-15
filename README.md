@@ -10,6 +10,7 @@
 <img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/8.png" alt="Output" />
 <img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/9.png" alt="Output" />
 <img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/10.png" alt="Output" />
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/video.gif" alt="Output" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
