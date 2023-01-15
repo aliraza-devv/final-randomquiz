@@ -1,5 +1,16 @@
 # Getting Started with Create React App
 
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/1.png" alt="Output" />
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/2.png" alt="Output" />
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/3.png" alt="Output" />
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/4.png" alt="Output" />
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/5.png" alt="Output" />
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/6.png" alt="Output" />
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/7.png" alt="Output" />
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/8.png" alt="Output" />
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/9.png" alt="Output" />
+<img src="https://github.com/aliraza-devv/final-randomquiz/blob/main/Output/10.png" alt="Output" />
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
