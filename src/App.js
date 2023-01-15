@@ -7,7 +7,6 @@ import Signup from './components/Signup';
 // import { auth } from './firbase';
 import StartGame from './components/StartGame';
 import Game from './components/Game';
-import Result from './components/Result';
 
 function App() {
   
@@ -20,7 +19,6 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/startgame" element={<StartGame />} />
           <Route path="/startgame/game" element={<Game />} />
-          <Route path="/startgame/game/result" element={<Result />} />
         </Routes>
       </Router>
     </div>

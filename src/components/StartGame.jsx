@@ -17,9 +17,6 @@ const StartGame = () => {
         <Link to="game">
           <BtnSecondary title="Start Game" />
         </Link>
-        <Link to="result">
-          <BtnSecondary title="Result" />
-        </Link>
         <button className="btn-primary" onClick={logout}>
           Logout
           <span className="arrow-wrapper">

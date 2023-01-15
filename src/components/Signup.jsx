@@ -38,9 +38,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container container-bg">
       <div className="container-box">
-        <h1 className="heading-light">Log in</h1>
+        <h1 className="heading-light">Sign Up</h1>
         <InputControl
           label="Name"
           placeholder="Enter your Full Name"

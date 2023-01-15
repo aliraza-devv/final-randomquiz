@@ -6,6 +6,7 @@ const Game = () => {
   const [score, setScore] = useState(0);
   const [isShown, setIsShown] = useState(false);
   const [isShow, setIsShow] = useState(false);
+  const [show, setShow] = useState(false);
   const [result, setResult] = useState([
     {
       check: "",
@@ -41,6 +42,8 @@ const Game = () => {
 
   const handleRetry = () => {
     setNum(0);
+    setIsShow(false)
+    setIsShown(false)
   };
 
   const handleShow = () => {
@@ -53,6 +56,8 @@ const Game = () => {
 
   const handleClick = () => {
     setNum(randomNumberInRange(100, 200));
+    setShow(true)
+    
   };
 
   const handleScore = () => {
@@ -86,7 +91,7 @@ const Game = () => {
             </button>
           </div>
           <div className="list-container">
-            <h3>Options are:</h3>
+            <h3 className="heading-white">Options are:</h3>
             <ul className="lists">
               <li onClick={handleWrongScore} className="list">
                 {num * (1.7).toFixed()}
@@ -98,6 +103,7 @@ const Game = () => {
                 {num * (1.6).toFixed()}
               </li>
             </ul>
+            {show && (
             <div className="next-container">
               <button className="btn-primary" onClick={handleClick}>
                 Next
@@ -106,6 +112,7 @@ const Game = () => {
                 </span>
               </button>
             </div>
+            )}
           </div>
           <div className="inner-container">
             <div className="inner-container__box">
